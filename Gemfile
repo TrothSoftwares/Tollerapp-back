@@ -23,6 +23,13 @@ gem 'will_paginate', '~> 3.1.0'
 
 
 gem 'rack-cors', :require => 'rack/cors'
+gem "mini_magick"
+
+
+gem 'carrierwave-aws'
+
+
+
 
 
 
@@ -46,3 +53,8 @@ group :development do
 
 end
 
+
+
+
+# AWSAccessKeyId=AKIAI36VU6JETNDYI3HQ
+# AWSSecretKey=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
