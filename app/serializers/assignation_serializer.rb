@@ -1,4 +1,4 @@
 class AssignationSerializer < ActiveModel::Serializer
-  attributes :id , :time , :day
+  attributes :id ,:day
   belongs_to :scheduleset
 end

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :examschedulesets
+  resources :examassignations
+  resources :examtimings
   resources :assignations
   resources :timings
   resources :schedulesets

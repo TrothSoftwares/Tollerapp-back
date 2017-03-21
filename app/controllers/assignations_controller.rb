@@ -46,6 +46,6 @@ class AssignationsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def assignation_params
-      params.fetch(:assignation, {})
+      params.fetch(:assignation, {}).permit!
     end
 end

@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   before_save :ensure_authentication_token
   has_many :audios , :dependent => :destroy
+  has_many :schedulesets , :dependent => :destroy
+  has_many :examschedulesets , :dependent => :destroy
 
 
   devise :database_authenticatable, :recoverable, :trackable, :validatable

@@ -46,6 +46,6 @@ class SchedulesetsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def scheduleset_params
-      params.fetch(:scheduleset, {})
+      params.fetch(:scheduleset, {}).permit!
     end
 end
