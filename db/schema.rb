@@ -22,7 +22,8 @@ ActiveRecord::Schema.define(version: 20170317055534) do
 
   create_table "audios", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "description"
-    t.text "url"
+    t.string "filename"
+    t.string "url"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -55,6 +56,7 @@ ActiveRecord::Schema.define(version: 20170317055534) do
   end
 
   create_table "schedulesets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "description"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

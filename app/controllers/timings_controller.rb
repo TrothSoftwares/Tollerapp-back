@@ -46,6 +46,6 @@ class TimingsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def timing_params
-      params.fetch(:timing, {})
+      params.fetch(:timing, {}).permit!
     end
 end

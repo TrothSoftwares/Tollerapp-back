@@ -4,12 +4,13 @@ user3 = User.create(email:'group@admin.com',password:'password',role:'group')
 
 #SCHDEULE SETS WITH TIMINGS AND ASSIGNATIONS
 for i in 1..7
-   scheduleset = Scheduleset.create(user: user1,)
+   scheduleset = Scheduleset.create(user: user1,description:'Description')
    for j in 1..25
      Timing.create(time:Time.now, file: "#{i}.mp3",scheduleset: scheduleset)
    end
-   for k in 1..25
-     Assignation.create( day: 'monday',scheduleset: scheduleset)
+   arr = ['sunday','saturday','friday','thursday','wednessday','tuesday','monday']
+   for k in 1..7
+     Assignation.create( day: arr.pop(),scheduleset: scheduleset)
    end
 end
 
@@ -25,6 +26,13 @@ for l in 1..7
      Examassignation.create(time:Time.now, examscheduleset: examscheduleset)
    end
 end
+
+#AUDIOS
+   for m in 1..10
+     Audio.create(description:"#{m} file ", url:"server/localhost/#{m}.mp3" , filename: "#{m}.mp3")
+   end
+
+
 
 
 #
