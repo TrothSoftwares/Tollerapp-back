@@ -3,7 +3,20 @@ class AssignationsController < ApplicationController
 
   # GET /assignations
   def index
-    @assignations = Assignation.all
+
+
+
+
+      if params[:filter].present?
+        logger.info "ffffffff"
+        @assignations =  Assignation.where(day: params[:filter][:day])
+      else
+        logger.info "ddddddddd"
+        @assignations = Assignation.all
+
+    end
+
+
 
     render json: @assignations
   end
@@ -36,16 +49,17 @@ class AssignationsController < ApplicationController
   # DELETE /assignations/1
   def destroy
     @assignation.destroy
+    render json: @assignation ,status: :ok
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_assignation
-      @assignation = Assignation.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_assignation
+    @assignation = Assignation.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def assignation_params
-      params.fetch(:assignation, {}).permit!
-    end
+  # Only allow a trusted parameter "white list" through.
+  def assignation_params
+    params.fetch(:assignation, {}).permit!
+  end
 end

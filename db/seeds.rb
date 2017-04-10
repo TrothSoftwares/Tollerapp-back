@@ -3,16 +3,16 @@ user2 = User.create(email:'super@admin.com',password:'password',role:'super')
 user3 = User.create(email:'group@admin.com',password:'password',role:'group')
 
 #SCHDEULE SETS WITH TIMINGS AND ASSIGNATIONS
+arr = ['sunday','saturday','friday','thursday','wednessday','tuesday','monday']
 for i in 1..7
    scheduleset = Scheduleset.create(user: user1,description:'Description')
    for j in 1..25
      Timing.create(time:Time.now, file: "#{i}.mp3",scheduleset: scheduleset)
    end
-   arr = ['sunday','saturday','friday','thursday','wednessday','tuesday','monday']
-   for k in 1..7
      Assignation.create( day: arr.pop(),scheduleset: scheduleset)
-   end
 end
+
+
 
 
 
