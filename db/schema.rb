@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170317055534) do
+ActiveRecord::Schema.define(version: 20170410044855) do
 
   create_table "assignations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "day"
@@ -63,6 +63,16 @@ ActiveRecord::Schema.define(version: 20170317055534) do
     t.index ["user_id"], name: "index_schedulesets_on_user_id"
   end
 
+  create_table "tickets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "title"
+    t.text "body"
+    t.string "status"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_tickets_on_user_id"
+  end
+
   create_table "timings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "time"
     t.string "file"
@@ -85,6 +95,13 @@ ActiveRecord::Schema.define(version: 20170317055534) do
     t.string "last_sign_in_ip"
     t.string "authentication_token", default: "", null: false
     t.string "role", default: "local"
+    t.string "dyndns"
+    t.string "internetport"
+    t.string "ethernetport"
+    t.string "nameofinstitution"
+    t.string "contactno"
+    t.string "location"
+    t.date "installationdate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -97,5 +114,6 @@ ActiveRecord::Schema.define(version: 20170317055534) do
   add_foreign_key "examschedulesets", "users"
   add_foreign_key "examtimings", "examschedulesets"
   add_foreign_key "schedulesets", "users"
+  add_foreign_key "tickets", "users"
   add_foreign_key "timings", "schedulesets"
 end

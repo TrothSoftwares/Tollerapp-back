@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :audios , :dependent => :destroy
   has_many :schedulesets , :dependent => :destroy
   has_many :examschedulesets , :dependent => :destroy
+  has_many :tickets , :dependent => :destroy
 
 
   devise :database_authenticatable, :recoverable, :trackable, :validatable

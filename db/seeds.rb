@@ -1,4 +1,4 @@
-user1 = User.create(email:'local@admin.com',password:'password',role:'local')
+user1 = User.create(email:'local@admin.com',password:'password',role:'local' ,dyndns:'localadmindns.com', internetport:3000,ethernetport:4000 ,nameofinstitution:'Test Institution name', contactno: 123465798,location:'Test location',installationdate:'2017-12-09')
 user2 = User.create(email:'super@admin.com',password:'password',role:'super')
 user3 = User.create(email:'group@admin.com',password:'password',role:'group')
 
@@ -31,6 +31,14 @@ end
    for m in 1..10
      Audio.create(description:"#{m} file ", url:"server/localhost/#{m}.mp3" , filename: "#{m}.mp3")
    end
+
+
+   for m in 1..5
+     Ticket.create(title:"Ticket Number : #{m}", body:"Test Body For Ticket : #{m}" , status: "open" ,user: user1)
+   end
+
+
+
 
 
 

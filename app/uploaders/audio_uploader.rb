@@ -2,7 +2,7 @@ class AudioUploader < CarrierWave::Uploader::Base
 
 
 
-  storage :aws
+  storage :file
 
 
   def store_dir

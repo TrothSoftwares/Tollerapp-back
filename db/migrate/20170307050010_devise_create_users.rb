@@ -20,9 +20,13 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.string   :last_sign_in_ip
       t.string :authentication_token, null: false, default: ""
       t.string :role, null: true, default: "local"
- 
-
-
+      t.string :dyndns, null: true
+      t.string :internetport, null: true
+      t.string :ethernetport, null: true
+      t.string :nameofinstitution, null: true
+      t.string :contactno, null: true
+      t.string :location, null: true
+      t.date :installationdate, null: true
 
       ## Confirmable
       # t.string   :confirmation_token
