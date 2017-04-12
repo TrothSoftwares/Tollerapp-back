@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170410044855) do
+ActiveRecord::Schema.define(version: 20170411111535) do
 
   create_table "assignations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "day"
@@ -53,6 +53,21 @@ ActiveRecord::Schema.define(version: 20170410044855) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["examscheduleset_id"], name: "index_examtimings_on_examscheduleset_id"
+  end
+
+  create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "memberships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "group_id"
+    t.integer "user_id"
+    t.boolean "owner"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id", "user_id"], name: "index_memberships_on_group_id_and_user_id"
   end
 
   create_table "schedulesets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

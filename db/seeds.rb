@@ -1,17 +1,92 @@
-user1 = User.create(email:'local@admin.com',password:'password',role:'local' ,dyndns:'localadmindns.com', internetport:3000,ethernetport:4000 ,nameofinstitution:'Test Institution name', contactno: 123465798,location:'Test location',installationdate:'2017-12-09')
-user2 = User.create(email:'super@admin.com',password:'password',role:'super')
-user3 = User.create(email:'group@admin.com',password:'password',role:'group')
+user1 = User.create(email:'local1@admin.com',password:'password',role:'local' ,dyndns:'local1admindns.com', internetport:3000,ethernetport:4000 ,nameofinstitution:'Test Institution local 1', contactno: 123465798,location:'Test location 1',installationdate:'2017-12-09')
+user2 = User.create(email:'local2@admin.com',password:'password',role:'local' ,dyndns:'local2admindns.com', internetport:3000,ethernetport:4000 ,nameofinstitution:'Test Institution local 2', contactno: 123465798,location:'Test location 2',installationdate:'2017-12-09')
+user3 = User.create(email:'local3@admin.com',password:'password',role:'local' ,dyndns:'local3admindns.com', internetport:3000,ethernetport:4000 ,nameofinstitution:'Test Institution local 3', contactno: 123465798,location:'Test location 3',installationdate:'2017-12-09')
+user4 = User.create(email:'local4@admin.com',password:'password',role:'local' ,dyndns:'local4admindns.com', internetport:3000,ethernetport:4000 ,nameofinstitution:'Test Institution local 4', contactno: 123465798,location:'Test location 4',installationdate:'2017-12-09')
+user5 = User.create(email:'local5@admin.com',password:'password',role:'local' ,dyndns:'local5admindns.com', internetport:3000,ethernetport:4000 ,nameofinstitution:'Test Institution local 5', contactno: 123465798,location:'Test location 5',installationdate:'2017-12-09')
+user6 = User.create(email:'local6@admin.com',password:'password',role:'local' ,dyndns:'local6admindns.com', internetport:3000,ethernetport:4000 ,nameofinstitution:'Test Institution local 6', contactno: 123465798,location:'Test location 6',installationdate:'2017-12-09')
+groupuser1 = User.create(email:'group1@admin.com',password:'password',role:'group')
+groupuser2 = User.create(email:'group2@admin.com',password:'password',role:'group')
+groupuser3 = User.create(email:'group3@admin.com',password:'password',role:'group')
+superadmin = User.create(email:'super@admin.com',password:'password',role:'super')
+
+
+group1 = Group.create(name: 'Group1')
+group2 = Group.create(name: 'Group2')
+group3 = Group.create(name: 'Group3')
+
+
+membership1 = Membership.create(group: group1 , user:user1,owner:false)
+membership2 = Membership.create(group: group1 , user:user2 ,owner:false)
+membership3 = Membership.create(group: group2 , user:user3 ,owner:false)
+membership4 = Membership.create(group: group2 , user:user4,owner:false)
+membership5 = Membership.create(group: group3 , user:user5,owner:false)
+membership6 = Membership.create(group: group3 , user:user6,owner:false)
+
+ownermembership7 = Membership.create(group: group1 , user:groupuser1,owner:true)
+ownermembership8 = Membership.create(group: group2 , user:groupuser2,owner:true)
+ownermembership9 = Membership.create(group: group3 , user:groupuser3,owner:true)
+
+
 
 #SCHDEULE SETS WITH TIMINGS AND ASSIGNATIONS
 arr = ['sunday','saturday','friday','thursday','wednessday','tuesday','monday']
+
+
+## FOR USER 1
 for i in 1..7
-   scheduleset = Scheduleset.create(user: user1,description:'Description')
+   scheduleset = Scheduleset.create(user: user1,description:'Description1')
    for j in 1..25
      Timing.create(time:Time.now, file: "#{i}.mp3",scheduleset: scheduleset)
    end
      Assignation.create( day: arr.pop(),scheduleset: scheduleset)
 end
 
+## FOR USER 2
+for i in 1..7
+   scheduleset = Scheduleset.create(user: user2,description:'Description2')
+   for j in 1..25
+     Timing.create(time:Time.now, file: "#{i}.mp3",scheduleset: scheduleset)
+   end
+     Assignation.create( day: arr.pop(),scheduleset: scheduleset)
+end
+
+## FOR USER 3
+for i in 1..7
+   scheduleset = Scheduleset.create(user: user3,description:'Description3')
+   for j in 1..25
+     Timing.create(time:Time.now, file: "#{i}.mp3",scheduleset: scheduleset)
+   end
+     Assignation.create( day: arr.pop(),scheduleset: scheduleset)
+end
+
+## FOR USER 4
+for i in 1..7
+   scheduleset = Scheduleset.create(user: user4,description:'Description4')
+   for j in 1..25
+     Timing.create(time:Time.now, file: "#{i}.mp3",scheduleset: scheduleset)
+   end
+     Assignation.create( day: arr.pop(),scheduleset: scheduleset)
+end
+
+## FOR USER 5
+for i in 1..7
+   scheduleset = Scheduleset.create(user: user5,description:'Description5')
+   for j in 1..25
+     Timing.create(time:Time.now, file: "#{i}.mp3",scheduleset: scheduleset)
+   end
+     Assignation.create( day: arr.pop(),scheduleset: scheduleset)
+end
+
+## FOR USER 6
+for i in 1..7
+   scheduleset = Scheduleset.create(user: user6,description:'Description6')
+   for j in 1..25
+     Timing.create(time:Time.now, file: "#{i}.mp3",scheduleset: scheduleset)
+   end
+     Assignation.create( day: arr.pop(),scheduleset: scheduleset)
+end
+
+### end of SCHEDULE set creation
 
 
 
