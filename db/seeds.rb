@@ -3,6 +3,7 @@ group2 = Group.create(name:'Group2')
 group3 = Group.create(name:'Group3')
 
 
+
 user1 = User.create(email:'local1@admin.com',password:'password',role:'local' ,dyndns:'localadmindns.com', internetport:3000,ethernetport:4000 ,nameofinstitution:'Test Institution name 1', contactno: 123465798,location:'Test location 1',installationdate:'2017-12-09' ,group: group1)
 user2 = User.create(email:'local2@admin.com',password:'password',role:'local' ,dyndns:'localadmindns.com', internetport:3000,ethernetport:4000 ,nameofinstitution:'Test Institution name 2', contactno: 123465798,location:'Test location 2',installationdate:'2017-12-09' ,group: group1)
 user3 = User.create(email:'local3@admin.com',password:'password',role:'local' ,dyndns:'localadmindns.com', internetport:3000,ethernetport:4000 ,nameofinstitution:'Test Institution name 3', contactno: 123465798,location:'Test location 3',installationdate:'2017-12-09' ,group: group2)
