@@ -3,7 +3,7 @@ class UserSerializer < ActiveModel::Serializer
   has_many :audios
   has_many :tickets
 
-  has_many :memberships
-  has_many :groups, through: :memberships
+
+  belongs_to :group
 
 end

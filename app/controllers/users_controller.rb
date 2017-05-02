@@ -2,8 +2,8 @@ class UsersController < ApplicationController
   # include ErrorSerializer
 
   before_action :set_user, only: [:show, :update, :destroy]
-#  wrap_parameters :user, include: [:name, :password, :password_confirmation ,:phone]
-  #skip_before_action :authenticate_user_from_token! , only: [:create]
+  wrap_parameters :user, include: [ :password, :password_confirmation]
+  # skip_before_action :authenticate_user_from_token! , only: [:create]
   # skip_before_action :authenticate_user! ,  only: [:create]
 
 
@@ -67,7 +67,7 @@ class UsersController < ApplicationController
 
 
   def user_params
-    params.fetch(:user, {}).permit(:name , :password , :password_confirmation , :phone , :dyndns , :internetport , :ethernetport)
+    params.fetch(:user, {}).permit(:name , :password , :password_confirmation , :phone , :dyndns , :internetport , :ethernetport,:email, :nameofinstitution, :contactno, :location, :installationdate)
   end
 
 end

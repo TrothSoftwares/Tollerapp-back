@@ -27,6 +27,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.string :contactno, null: true
       t.string :location, null: true
       t.date :installationdate, null: true
+      t.boolean :isowner, default: false
+      t.references :group, index: true, foreign_key: true
+
+
+
 
       ## Confirmable
       # t.string   :confirmation_token

@@ -33,8 +33,8 @@
   }
 
   config.aws_credentials = {
-    access_key_id:     'AKIAJSQBVQKZZZWV4JOA',
-    secret_access_key: '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',
+    access_key_id:     'AKIAJDVUHRLQMCTUS2DA',
+    secret_access_key: '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',
     region:            'mumbai',
 
 
