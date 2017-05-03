@@ -4,12 +4,12 @@ group3 = Group.create(name:'Group3')
 
 
 
-user1 = User.create(email:'local1@admin.com',password:'password',role:'local' ,dyndns:'localadmindns.com', internetport:3000,ethernetport:4000 ,nameofinstitution:'Test Institution name 1', contactno: 123465798,location:'Test location 1',installationdate:'2017-12-09' ,group: group1)
-user2 = User.create(email:'local2@admin.com',password:'password',role:'local' ,dyndns:'localadmindns.com', internetport:3000,ethernetport:4000 ,nameofinstitution:'Test Institution name 2', contactno: 123465798,location:'Test location 2',installationdate:'2017-12-09' ,group: group1)
-user3 = User.create(email:'local3@admin.com',password:'password',role:'local' ,dyndns:'localadmindns.com', internetport:3000,ethernetport:4000 ,nameofinstitution:'Test Institution name 3', contactno: 123465798,location:'Test location 3',installationdate:'2017-12-09' ,group: group2)
-user4 = User.create(email:'local4@admin.com',password:'password',role:'local' ,dyndns:'localadmindns.com', internetport:3000,ethernetport:4000 ,nameofinstitution:'Test Institution name 4', contactno: 123465798,location:'Test location 4',installationdate:'2017-12-09' ,group: group2)
-user5 = User.create(email:'local5@admin.com',password:'password',role:'local' ,dyndns:'localadmindns.com', internetport:3000,ethernetport:4000 ,nameofinstitution:'Test Institution name 5', contactno: 123465798,location:'Test location 5',installationdate:'2017-12-09' ,group: group3)
-user6 = User.create(email:'local6@admin.com',password:'password',role:'local' ,dyndns:'localadmindns.com', internetport:3000,ethernetport:4000 ,nameofinstitution:'Test Institution name 6', contactno: 123465798,location:'Test location 6',installationdate:'2017-12-09' ,group: group3)
+user1 = User.create(email:'local1@admin.com',password:'password',role:'local' ,dyndns:'localadmindns.com', internetport:3000,ethernetport:4000 ,nameofinstitution:'Test Institution name 1', contactno: 123465798,location:'Test location 1',installationdate:'2017-12-09', walletbalance:10000 ,group: group1)
+user2 = User.create(email:'local2@admin.com',password:'password',role:'local' ,dyndns:'localadmindns.com', internetport:3000,ethernetport:4000 ,nameofinstitution:'Test Institution name 2', contactno: 123465798,location:'Test location 2',installationdate:'2017-12-09', walletbalance:10000,group: group1)
+user3 = User.create(email:'local3@admin.com',password:'password',role:'local' ,dyndns:'localadmindns.com', internetport:3000,ethernetport:4000 ,nameofinstitution:'Test Institution name 3', contactno: 123465798,location:'Test location 3',installationdate:'2017-12-09', walletbalance:0, group: group2)
+user4 = User.create(email:'local4@admin.com',password:'password',role:'local' ,dyndns:'localadmindns.com', internetport:3000,ethernetport:4000 ,nameofinstitution:'Test Institution name 4', contactno: 123465798,location:'Test location 4',installationdate:'2017-12-09', walletbalance:0,group: group2)
+user5 = User.create(email:'local5@admin.com',password:'password',role:'local' ,dyndns:'localadmindns.com', internetport:3000,ethernetport:4000 ,nameofinstitution:'Test Institution name 5', contactno: 123465798,location:'Test location 5',installationdate:'2017-12-09', walletbalance:0 ,group: group3)
+user6 = User.create(email:'local6@admin.com',password:'password',role:'local' ,dyndns:'localadmindns.com', internetport:3000,ethernetport:4000 ,nameofinstitution:'Test Institution name 6', contactno: 123465798,location:'Test location 6',installationdate:'2017-12-09', walletbalance:0 ,group: group3)
 
 groupuser1 = User.create(email:'group1@admin.com',password:'password',role:'group' ,group: group1 ,isowner: true)
 groupuser2 = User.create(email:'group2@admin.com',password:'password',role:'group' ,group: group2 ,isowner: true)
@@ -17,7 +17,42 @@ groupuser3 = User.create(email:'group3@admin.com',password:'password',role:'grou
 
 
 
+
+
+
+
+
 superuser = User.create(email:'super@admin.com',password:'password',role:'super')
+
+
+payment1 = Payment.create(user:user1 , paymentdate:'2017-12-09' , amount:1000 ,paymentmethod: 'wallet',previouswalletbalance:10000 , afterwalletbalance: 9000)
+payment2 = Payment.create(user:user1 , paymentdate:'2017-12-10' , amount:2000 ,paymentmethod: 'cash',previouswalletbalance:9000 , afterwalletbalance: 9000)
+payment3 = Payment.create(user:user1 , paymentdate:'2017-12-11' , amount:1000 ,paymentmethod: 'wallet',previouswalletbalance:9000 , afterwalletbalance: 8000)
+
+payment4 = Payment.create(user:user2 , paymentdate:'2017-12-09' , amount:1000 ,paymentmethod: 'wallet',previouswalletbalance:10000 , afterwalletbalance: 9000)
+payment5 = Payment.create(user:user2 , paymentdate:'2017-12-10' , amount:2000 ,paymentmethod: 'cash',previouswalletbalance:9000 , afterwalletbalance: 9000)
+payment6 = Payment.create(user:user2 , paymentdate:'2017-12-11' , amount:1000 ,paymentmethod: 'wallet',previouswalletbalance:9000 , afterwalletbalance: 8000)
+
+payment7 = Payment.create(user:user3 , paymentdate:'2017-12-09' , amount:1000 ,paymentmethod: 'wallet',previouswalletbalance:10000 , afterwalletbalance: 9000)
+payment8 = Payment.create(user:user3 , paymentdate:'2017-12-10' , amount:2000 ,paymentmethod: 'cash',previouswalletbalance:9000 , afterwalletbalance: 9000)
+payment9 = Payment.create(user:user3 , paymentdate:'2017-12-11' , amount:1000 ,paymentmethod: 'wallet',previouswalletbalance:9000 , afterwalletbalance: 8000)
+
+payment10 = Payment.create(user:user4 , paymentdate:'2017-12-09' , amount:1000 ,paymentmethod: 'wallet',previouswalletbalance:10000 , afterwalletbalance: 9000)
+payment11 = Payment.create(user:user4 , paymentdate:'2017-12-10' , amount:2000 ,paymentmethod: 'cash',previouswalletbalance:9000 , afterwalletbalance: 9000)
+payment12 = Payment.create(user:user4 , paymentdate:'2017-12-11' , amount:1000 ,paymentmethod: 'wallet',previouswalletbalance:9000 , afterwalletbalance: 8000)
+
+payment13 = Payment.create(user:user5 , paymentdate:'2017-12-09' , amount:1000 ,paymentmethod: 'wallet',previouswalletbalance:10000 , afterwalletbalance: 9000)
+payment14 = Payment.create(user:user5 , paymentdate:'2017-12-10' , amount:2000 ,paymentmethod: 'cash',previouswalletbalance:9000 , afterwalletbalance: 9000)
+payment15 = Payment.create(user:user5 , paymentdate:'2017-12-11' , amount:1000 ,paymentmethod: 'wallet',previouswalletbalance:9000 , afterwalletbalance: 8000)
+
+payment16 = Payment.create(user:user6 , paymentdate:'2017-12-09' , amount:1000 ,paymentmethod: 'wallet',previouswalletbalance:10000 , afterwalletbalance: 9000)
+payment17 = Payment.create(user:user6 , paymentdate:'2017-12-10' , amount:2000 ,paymentmethod: 'cash',previouswalletbalance:9000 , afterwalletbalance: 9000)
+payment18 = Payment.create(user:user6 , paymentdate:'2017-12-11' , amount:1000 ,paymentmethod: 'wallet',previouswalletbalance:9000 , afterwalletbalance: 8000)
+
+
+
+
+
 
 #SCHDEULE SETS WITH TIMINGS AND ASSIGNATIONS
 arr = ['sunday','saturday','friday','thursday','wednessday','tuesday','monday']

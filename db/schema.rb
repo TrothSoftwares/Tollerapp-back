@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170410044855) do
+ActiveRecord::Schema.define(version: 20170503064655) do
 
   create_table "assignations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "day"
@@ -59,6 +59,18 @@ ActiveRecord::Schema.define(version: 20170410044855) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "payments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.datetime "paymentdate"
+    t.decimal "amount", precision: 8, scale: 2, default: "0.0"
+    t.decimal "previouswalletbalance", precision: 8, scale: 2, default: "0.0"
+    t.decimal "afterwalletbalance", precision: 8, scale: 2, default: "0.0"
+    t.string "paymentmethod"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_payments_on_user_id"
   end
 
   create_table "schedulesets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -110,6 +122,7 @@ ActiveRecord::Schema.define(version: 20170410044855) do
     t.date "installationdate"
     t.boolean "isowner", default: false
     t.bigint "group_id"
+    t.decimal "walletbalance", precision: 8, scale: 2, default: "0.0"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -122,6 +135,7 @@ ActiveRecord::Schema.define(version: 20170410044855) do
   add_foreign_key "examassignations", "examschedulesets"
   add_foreign_key "examschedulesets", "users"
   add_foreign_key "examtimings", "examschedulesets"
+  add_foreign_key "payments", "users"
   add_foreign_key "schedulesets", "users"
   add_foreign_key "tickets", "users"
   add_foreign_key "timings", "schedulesets"

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :payments
   resources :groups
   resources :tickets
   resources :examschedulesets

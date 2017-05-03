@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :schedulesets , :dependent => :destroy
   has_many :examschedulesets , :dependent => :destroy
   has_many :tickets , :dependent => :destroy
+  has_many :payments , :dependent => :destroy
   belongs_to :group
 
   devise :database_authenticatable, :recoverable, :trackable, :validatable

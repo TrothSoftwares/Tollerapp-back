@@ -29,6 +29,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.date :installationdate, null: true
       t.boolean :isowner, default: false
       t.references :group, index: true, foreign_key: true
+      t.decimal :walletbalance ,  :precision => 8, :scale => 2 ,default:0
 
 
 
