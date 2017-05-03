@@ -3,6 +3,7 @@ class UserSerializer < ActiveModel::Serializer
   has_many :audios
   has_many :tickets
   has_many :payments
+  has_many :walletpayments
 
 
   belongs_to :group

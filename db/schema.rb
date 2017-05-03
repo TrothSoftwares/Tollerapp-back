@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170503064655) do
+ActiveRecord::Schema.define(version: 20170503111748) do
 
   create_table "assignations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "day"
@@ -130,6 +130,20 @@ ActiveRecord::Schema.define(version: 20170503064655) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "walletpayments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.datetime "paymentdate"
+    t.decimal "amount", precision: 8, scale: 2, default: "0.0"
+    t.decimal "previouswalletbalance", precision: 8, scale: 2, default: "0.0"
+    t.decimal "afterwalletbalance", precision: 8, scale: 2, default: "0.0"
+    t.string "paymentmethod"
+    t.string "refno"
+    t.string "remarks"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_walletpayments_on_user_id"
+  end
+
   add_foreign_key "assignations", "schedulesets"
   add_foreign_key "audios", "users"
   add_foreign_key "examassignations", "examschedulesets"
@@ -140,4 +154,5 @@ ActiveRecord::Schema.define(version: 20170503064655) do
   add_foreign_key "tickets", "users"
   add_foreign_key "timings", "schedulesets"
   add_foreign_key "users", "groups"
+  add_foreign_key "walletpayments", "users"
 end

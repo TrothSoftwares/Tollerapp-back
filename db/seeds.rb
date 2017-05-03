@@ -24,7 +24,7 @@ groupuser3 = User.create(email:'group3@admin.com',password:'password',role:'grou
 
 superuser = User.create(email:'super@admin.com',password:'password',role:'super')
 
-
+###### START OF PAYMENTS ###############
 payment1 = Payment.create(user:user1 , paymentdate:'2017-12-09' , amount:1000 ,paymentmethod: 'wallet',previouswalletbalance:10000 , afterwalletbalance: 9000)
 payment2 = Payment.create(user:user1 , paymentdate:'2017-12-10' , amount:2000 ,paymentmethod: 'cash',previouswalletbalance:9000 , afterwalletbalance: 9000)
 payment3 = Payment.create(user:user1 , paymentdate:'2017-12-11' , amount:1000 ,paymentmethod: 'wallet',previouswalletbalance:9000 , afterwalletbalance: 8000)
@@ -48,7 +48,36 @@ payment15 = Payment.create(user:user5 , paymentdate:'2017-12-11' , amount:1000 ,
 payment16 = Payment.create(user:user6 , paymentdate:'2017-12-09' , amount:1000 ,paymentmethod: 'wallet',previouswalletbalance:10000 , afterwalletbalance: 9000)
 payment17 = Payment.create(user:user6 , paymentdate:'2017-12-10' , amount:2000 ,paymentmethod: 'cash',previouswalletbalance:9000 , afterwalletbalance: 9000)
 payment18 = Payment.create(user:user6 , paymentdate:'2017-12-11' , amount:1000 ,paymentmethod: 'wallet',previouswalletbalance:9000 , afterwalletbalance: 8000)
+###### END OF PAYMENTS ###############
 
+###### START OF WALLET PAYMENTS ###############
+walletpayment1 = Walletpayment.create(user:user1 , paymentdate:'2017-12-09' , amount:1000 ,paymentmethod: 'cheque',previouswalletbalance:10000 , afterwalletbalance: 11000 , remarks: 'Some Remraks')
+walletpayment2 = Walletpayment.create(user:user1 , paymentdate:'2017-12-10' , amount:2000 ,paymentmethod: 'cash',previouswalletbalance:11000 , afterwalletbalance: 13000 ,refno: '234234')
+walletpayment3 = Walletpayment.create(user:user1 , paymentdate:'2017-12-11' , amount:1000 ,paymentmethod: 'cash',previouswalletbalance:13000 , afterwalletbalance: 14000)
+
+walletpayment4 = Walletpayment.create(user:user2 , paymentdate:'2017-12-09' , amount:1000 ,paymentmethod: 'cheque',previouswalletbalance:10000 , afterwalletbalance: 11000)
+walletpayment5 = Walletpayment.create(user:user2 , paymentdate:'2017-12-10' , amount:2000 ,paymentmethod: 'cash',previouswalletbalance:11000 , afterwalletbalance: 13000 ,refno: '234234')
+walletpayment6 = Walletpayment.create(user:user2 , paymentdate:'2017-12-11' , amount:1000 ,paymentmethod: 'cash',previouswalletbalance:13000 , afterwalletbalance: 14000 , remarks: 'Some Remraks')
+
+walletpayment7 = Walletpayment.create(user:user3 , paymentdate:'2017-12-09' , amount:1000 ,paymentmethod: 'cheque',previouswalletbalance:10000 , afterwalletbalance: 11000)
+walletpayment8 = Walletpayment.create(user:user3 , paymentdate:'2017-12-10' , amount:2000 ,paymentmethod: 'cash',previouswalletbalance:11000 , afterwalletbalance: 13000)
+walletpayment9 = Walletpayment.create(user:user3 , paymentdate:'2017-12-11' , amount:1000 ,paymentmethod: 'cash',previouswalletbalance:13000 , afterwalletbalance: 14000 , remarks: 'Some Remraks')
+
+walletpayment10 = Walletpayment.create(user:user4 , paymentdate:'2017-12-09' , amount:1000 ,paymentmethod: 'cheque',previouswalletbalance:10000 , afterwalletbalance: 11000 ,refno: '5465')
+walletpayment11 = Walletpayment.create(user:user4 , paymentdate:'2017-12-10' , amount:2000 ,paymentmethod: 'cash',previouswalletbalance:11000 , afterwalletbalance: 13000 , remarks: 'Some Remraks')
+walletpayment12 = Walletpayment.create(user:user4 , paymentdate:'2017-12-11' , amount:1000 ,paymentmethod: 'cash',previouswalletbalance:13000 , afterwalletbalance: 14000)
+
+walletpayment13 = Walletpayment.create(user:user5 , paymentdate:'2017-12-09' , amount:1000 ,paymentmethod: 'cheque',previouswalletbalance:10000 , afterwalletbalance: 11000)
+walletpayment14 = Walletpayment.create(user:user5 , paymentdate:'2017-12-10' , amount:2000 ,paymentmethod: 'cash',previouswalletbalance:11000 , afterwalletbalance: 13000)
+walletpayment15 = Walletpayment.create(user:user5 , paymentdate:'2017-12-11' , amount:1000 ,paymentmethod: 'cash',previouswalletbalance:13000 , afterwalletbalance: 14000)
+
+walletpayment16 = Walletpayment.create(user:user6 , paymentdate:'2017-12-09' , amount:1000 ,paymentmethod: 'cheque',previouswalletbalance:10000 , afterwalletbalance: 11000 ,refno: '234234')
+walletpayment17 = Walletpayment.create(user:user6 , paymentdate:'2017-12-10' , amount:2000 ,paymentmethod: 'cash',previouswalletbalance:11000 , afterwalletbalance: 13000)
+walletpayment18 = Walletpayment.create(user:user6 , paymentdate:'2017-12-11' , amount:1000 ,paymentmethod: 'cash',previouswalletbalance:13000 , afterwalletbalance: 14000 ,refno: '5665')
+
+
+
+###### END OF WALLET PAYMENTS ###############
 
 
 

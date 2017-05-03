@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :walletpayments
   resources :payments
   resources :groups
   resources :tickets
