@@ -4,7 +4,7 @@ class CreateBackgroundimages < ActiveRecord::Migration[5.1]
       t.string :description
       t.string :filename
       t.string :url
-      t.string :status ,default: 'inactive'
+      t.boolean :status ,default: false
       t.timestamps
     end
   end

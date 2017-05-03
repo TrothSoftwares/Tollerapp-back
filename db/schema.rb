@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20170503115006) do
     t.string "description"
     t.string "filename"
     t.string "url"
-    t.string "status", default: "inactive"
+    t.boolean "status", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 20170503115006) do
   create_table "quotes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "quotetext"
     t.string "author"
-    t.string "status", default: "inactive"
+    t.boolean "status", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
