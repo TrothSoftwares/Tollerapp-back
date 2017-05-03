@@ -76,8 +76,23 @@ walletpayment17 = Walletpayment.create(user:user6 , paymentdate:'2017-12-10' , a
 walletpayment18 = Walletpayment.create(user:user6 , paymentdate:'2017-12-11' , amount:1000 ,paymentmethod: 'cash',previouswalletbalance:13000 , afterwalletbalance: 14000 ,refno: '5665')
 
 
-
 ###### END OF WALLET PAYMENTS ###############
+
+
+
+######### START OF QUOTES AND BACKGROUND IMAGES ##############
+
+Quote.create(quotetext:'Success is the good fortune that comes from aspiration, desperation, perspiration and inspiration.' , author:'Evan Esar',status: 'active')
+Quote.create(quotetext:'You are unrepeatable. There is a magic about you that is all your own...' , author:'D.M. Dellinger',status: 'inactive')
+Quote.create(quotetext:'Nurture your mind with great thoughts.' , author:'Benjamin Disraeli',status: 'inactive')
+
+
+
+
+Backgroundimage.create(description:"Custom file ", url:"server/localhost/custom.jpg" , filename: "custom.jpg" , status: 'active')
+
+
+######### END OF QUOTES AND BACKGROUND IMAGES ##############
 
 
 

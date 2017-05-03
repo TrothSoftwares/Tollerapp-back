@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :backgroundimages
+  resources :quotes
   resources :walletpayments
   resources :payments
   resources :groups
