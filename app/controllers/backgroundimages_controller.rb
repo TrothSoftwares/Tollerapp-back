@@ -1,6 +1,9 @@
 class BackgroundimagesController < ApplicationController
   before_action :set_backgroundimage, only: [:show, :update, :destroy]
 
+  skip_before_action :authenticate_user_from_token! , only: [:index]
+  skip_before_action :authenticate_user! , only: [:index]
+
   # GET /backgroundimages
   def index
     @backgroundimages = Backgroundimage.all
@@ -46,6 +49,6 @@ class BackgroundimagesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def backgroundimage_params
-      params.fetch(:backgroundimage, {})
+      params.fetch(:backgroundimage, {}).permit!
     end
 end
