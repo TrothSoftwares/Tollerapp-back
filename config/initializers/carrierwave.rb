@@ -21,7 +21,7 @@
  CarrierWave.configure do |config|
   config.storage    = :aws
   config.aws_bucket = 'tollerapp'
-  config.aws_acl    = 'public-read'
+  config.aws_acl    = 'private'
   config.asset_host = 'http://tollerapp.s3.amazonaws.com/'
 
 
@@ -35,7 +35,7 @@
   config.aws_credentials = {
     access_key_id:     'AKIAJDVUHRLQMCTUS2DA',
     secret_access_key: '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',
-    region:            'mumbai',
+    region:            'ap-south-1',
 
 
   }
